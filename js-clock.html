@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css3 Clock</title>
+    <link rel="stylesheet" href="js-clock.css">
+</head>
+<body>
+
+    <div class="clock-body">
+        
+        <div class="hand second" id="second"></div>
+        <div class="hand minuite" id="minuite"></div>
+        <div class="hand hour" id="hour"></div>
+
+        <div class="digit digit1">1</div>
+        <div class="digit digit2">2</div>
+        <div class="digit digit3">3</div>
+        <div class="digit digit4">4</div>
+        <div class="digit digit5">5</div>
+        <div class="digit digit6">6</div>
+        <div class="digit digit7">7</div>
+        <div class="digit digit8">8</div>
+        <div class="digit digit9">9</div>
+        <div class="digit digit10">10</div>
+        <div class="digit digit11">11</div>
+        <div class="digit digit12">12</div>
+
+    </div>
+
+
+
+    <script type="text/javascript">
+        
+        function showlivetime(){
+            var ekhon = new Date();
+            var sec = ekhon.getSeconds()*6;
+            var minit = ekhon.getMinutes()*6;
+            var ghonta = ekhon.getHours()*30;
+
+            // var ghonta = 5;
+            // var minit = 35;
+            // var sec = 40;
+            // var ghontaa = ghonta + minit * 12;
+
+
+            document.getElementById('second').style.transform = 'rotate('+sec+'deg)';
+            document.getElementById('minuite').style.transform = 'rotate('+minit+'deg)';
+            document.getElementById('hour').style.transform = 'rotate('+ghonta+'deg)';
+
+            setTimeout( function(){
+                showlivetime();
+            }, 1000);
+        }
+        
+        showlivetime();
+      
+
+    </script>
+
+
+</body>
+</html>
